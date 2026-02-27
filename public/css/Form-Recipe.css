@@ -1,0 +1,92 @@
+body {
+    font-family:'ITC Benguiat Std', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/img/42da4d9f286a664d49f955265d75a77e.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #793323;
+}
+main.container {
+    background: #5c350388;
+    border-radius: 12px;
+    padding: 65px 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+h2.formulario__titulo {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.formulario__campo {
+    margin-bottom: 20px;
+}
+
+.campo__etiqueta {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.campo__escrita, textarea.campo__escrita {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #362424;
+    background-color: #ffe0b2;
+}
+
+textarea.campo__escrita {
+    resize: none;
+    height: 120px;
+}
+
+.campo__escrita::placeholder {
+    color: #8d6e63;
+}
+
+.formulario__botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario__botao {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e65100;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.formulario__botao:hover {
+    background-color: #bf360c;
+}
+
+.formulario__botao:last-child {
+    background-color: #f50a0a;
+    color: #ffffff;
+}
+
+.formulario__botao:last-child:hover {
+    background-color: #5f0000;
+}

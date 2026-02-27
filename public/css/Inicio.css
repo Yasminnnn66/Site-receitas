@@ -1,0 +1,231 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: ITC Benguiat Std;
+    line-height: 1.6;
+}
+
+header {
+    background-image: url(/img/headermenu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px 20px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.navbar {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    transition: all 0.3s;
+    align-items: center;
+    margin-left: 130px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.568);
+    color: #ffffff;
+}
+
+.icon-buttons {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    justify-content: space-between;
+}
+.icon-buttons2 {
+    display:grid;
+}
+.icon-bt {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: black;
+}
+.icon-bt i {
+    font-size: 45px;
+    margin-left: 20px;
+    margin-right: 3px;
+}
+
+.intro{
+    background-image: url(/img/estatic.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.658);
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+
+    height: 350px;
+    color: #fff;
+    font-family: ITC Benguiat Std;
+    font-size:  60px;
+    text-align: center;
+}
+h2{
+    font-family:ITC Benguiat Std;
+    font-size: 70px;
+    text-align: center;
+    margin-left: -15px;
+    margin-top: 50px;
+}
+p{
+    margin-right: 700px;
+    font-size: 30px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.botao2{
+    padding: 10px 48px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #e0740f;
+    color: white;
+    border-radius: 30px 30px 30px 30px;
+    cursor: pointer;
+    color: black;
+    border-right: rgba(0, 0, 0, 0.815) solid 5px;
+    border-bottom: rgba(0, 0, 0, 0.815) solid 5px;
+    transition: all 0.40s;
+    text-decoration: none;
+    font-family: ITC Benguiat Std;;
+    display: inline-block;
+    border-top: solid black 2px;
+    border-left: solid black 2px;
+    margin-top: 25px;
+    margin-left: 490px;
+
+}
+.botao2:hover{
+
+    background-color: #f5aa48;
+    transform: scale(1.1);
+}
+
+.rest{
+    position: absolute;
+    width: 400px;
+    margin-left: 1300px;
+    margin-bottom: 30px;
+    transition: ease-in 2s;
+}
+main h1{
+    text-align: center;
+    margin-top: 255px;
+
+}
+.imagens{
+
+    display: flex;
+    margin-left: 160px;
+    gap: 200px;
+    margin-top: 40px;
+}
+.entrada {
+    width: 240px;
+    height: 260px;
+    object-fit: cover;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.40s;
+}
+
+.entrada:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 7px 10px rgba(252, 135, 2, 0.938);
+}
+
+.pratos{
+    width: 240px;
+
+    height: 260px;
+    object-fit: cover;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.356);
+    transition: all 0.40s;
+
+}
+.pratos:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 7px 10px rgba(252, 135, 2, 0.938);
+}
+.sobremesas{
+    width: 240px;
+
+    height: 260px;
+    object-fit: cover;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.40s;
+}
+.sobremesas:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 7px 10px rgba(252, 135, 2, 0.938);
+}
+.bebidas{
+    width: 240px;
+
+    height: 260px;
+    object-fit: cover;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.40s;
+}
+.bebidas:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 7px 10px rgba(252, 135, 2, 0.938);
+}
+.men {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+
+}
+
+.foot{
+    background-color: #e0740f;
+    text-align: center;
+    font-size: small;
+    width: 100%;
+
+}
