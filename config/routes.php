@@ -20,10 +20,10 @@ return [
     'POST|/nova-receita' => NewRecipeController::class,
     'GET|/editar-receita' => RecipeFormController::class,
     'POST|/editar-receita' => EditRecipeController::class,
-    'GET|/remover-receita' => DeleteRecipeController::class,
+    'POST|/remover-receita' => DeleteRecipeController::class,
     'GET|/login' => LoginFormController::class,
     'POST|/login' => LoginController::class,
-    'GET|/logout' => LogoutController::class,
+    'POST|/logout' => LogoutController::class,
     'GET|/cadastro' => RegisterFormController::class,
     'POST|/cadastro' => NewUserController::class,
 ];

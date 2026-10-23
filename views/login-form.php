@@ -25,6 +25,7 @@
 
 
     <form action="/login" method="POST">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
         <label for="email">Email</label>
         <div>
             <input type="email" id="email" name="email" maxlength="50" size="50" required>

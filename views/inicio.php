@@ -22,9 +22,12 @@
                     </ul>
                     <div class="icon-buttons">
 
-                        <a href="/logout"  <button class="icon-bt" >
-                             <i class='bx bx-log-out'> </i>
-                        </button> </a>
+                        <form action="/logout" method="post">
+                          <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
+                          <button type="submit" class="icon-bt" aria-label="Sair">
+                            <i class='bx bx-log-out'></i>
+                          </button>
+                        </form>
 
                     </div>
 

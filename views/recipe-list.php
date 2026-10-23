@@ -25,18 +25,21 @@ use Recipe\Mvc\Entity\Recipe;
     <ul class="recipe__container" alt="recipe">
         <?php foreach ($recipeList as $recipe) { ?>
             <li class="recipe__item">
-                <img src="<?= $recipe->url; ?>" alt="Imagem da Receita">
+                <img src="<?= htmlspecialchars($recipe->url, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>" alt="Imagem da Receita">
                 <div class="descricao-receita">
-                    <h3><?= $recipe->title; ?></h3>
+                    <h3><?= htmlspecialchars($recipe->title, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?></h3>
                     <ul>
                         <?php foreach (explode("\n", $recipe->description) as $ingredient) { ?>
-                            <li><?= $ingredient; ?></li>
+                            <li><?= htmlspecialchars($ingredient, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?></li>
                         <?php } ?>
                     </ul>
                 </div>
                 <div class="acoes-video">
-                    <a href="/editar-receita?id=<?= $recipe->id; ?>">Editar</a>
-                    <a href="/remover-receita?id=<?= $recipe->id; ?>">Excluir</a>
+                    <a href="/editar-receita?id=<?= (int) $recipe->id; ?>">Editar</a>
+                    <form method="post" action="/remover-receita?id=<?= (int) $recipe->id; ?>" onsubmit="return confirm('Excluir esta receita?')">
+                      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
+                      <button type="submit">Excluir</button>
+                    </form>
                 </div>
             </li>
         <?php } ?>

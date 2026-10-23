@@ -10,11 +10,12 @@
     <main class="container">
 
         <form class="container__formulario" method="post">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
             <h2 class="formulario__titulo">Efetue Cadastro</h2>
             <div class="formulario__campo">
                 <b> <label class="campo__etiqueta" for="usuario">Usuário</label> </b>
                 <input name="email"
-                       value="<?= $users?->email ?? ''; ?>"
+                       value="<?= htmlspecialchars($users?->email ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>"
                        class="campo__escrita"
                        required
                        placeholder="Digite seu usuário" id='usuario'/>
@@ -24,7 +25,7 @@
                 <b> <label class="campo__etiqueta" for="senha"> Senha </label></b>
                 <input type="password"
                        name="password"
-                       value="<?= $users?->password ?? ''; ?>"
+                       value=""
                        class="campo__escrita"
                        required
                        placeholder="Digite sua senha"
