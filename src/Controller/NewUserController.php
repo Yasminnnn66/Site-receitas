@@ -17,13 +17,13 @@ class NewUserController implements Controller
     public function processaRequisicao(): void
     {
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        if ($email === false) {
+        if (!is_string($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             header('Location: /?sucesso=0');
             exit();
         }
 
         $password = filter_input(INPUT_POST, 'password');
-        if ($password === false) {
+        if (!is_string($password) || strlen($password) < 8) {
             header('Location: /?sucesso=0');
             exit();
         }
