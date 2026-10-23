@@ -1,0 +1,17 @@
+name: Checagens de seguranca PHP
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: ['security/**']
+permissions:
+  contents: read
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar interpretador PHP
+        run: php --version
+      - name: Verificar sintaxe PHP
+        run: find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l
