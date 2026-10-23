@@ -18,7 +18,7 @@ class EditRecipeController implements Controller
     {
 
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        if ($id === false) {
+        if ($id === false || $id === null || $id <= 0) {
             header('Location: /list?sucesso=0');
             exit();
         }
