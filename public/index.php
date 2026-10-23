@@ -21,10 +21,26 @@ $routes = require __DIR__ . '/../config/routes.php';
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
 $httpMethod = $_SERVER['REQUEST_METHOD'];
 
+// Cookies de sessao seguros quando servidos por HTTPS.
+session_set_cookie_params([
+    'httponly' => true,
+    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    'samesite' => 'Lax',
+]);
 session_start();
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+if ($httpMethod === 'POST') {
+    $token = $_POST['csrf_token'] ?? '';
+    if (!is_string($token) || !hash_equals($_SESSION['csrf_token'], $token)) {
+        http_response_code(403);
+        exit('Solicitacao invalida. Atualize a pagina e tente novamente.');
+    }
+}
 $isLoginRoute = $pathInfo === '/login';
 
-if (!array_key_exists('logado', $_SESSION) && !$isLoginRoute && $pathInfo !== '/cadastro') {
+if (empty($_SESSION['logado']) && !$isLoginRoute && $pathInfo !== '/cadastro') {
     header('Location: /login');
     return;
 }
